@@ -1,3 +1,43 @@
+/*
+In this problem, you will write a solution to the Fizz Buzz problem (description to follow) within the body of the function FizzBuzz. 
+I understand that we haven't discussed functions in detail yet. What you need to know is that our auto-grader will invoke your 
+implementation (the code within the function body) with an integer value to initialize the parameter int n.
+You will write your definition of Fizz Buzz between the curly braces and with respect to the value stored in the parameter n. 
+Your function will return a string literal based on the value of n:
+The string literal Fizz (return "Fizz";) if n is divisible by 3
+The string literal Buzz if n is divisible by 5
+The string literal FizzBuzz if n is divisible by 3 and 5
+The n encoded as a string (return std::to_string(n);) if n is not divisible by 3 and/or 5
+Hint: the modulus operator will likely prove useful in this problem.
+You will define FizzBuzz in fizz-buzz.cc. You can test your implementation in driver.cc by calling FizzBuzz with different arguments.
+*/
+
+
 #include <string>
 
 std::string FizzBuzz(int n) {
+      if (n % 3 == 0 && n % 5 == 0) {
+          return "FizzBuzz";
+      } else if (n % 3 == 0) {
+          return "Fizz";
+      } else if (n % 5 == 0) {
+          return "Buzz";
+      } 
+        else {
+          return std::to_string(n);
+      }
+        
+}
+#include <iostream>
+
+std::string FizzBuzz(int n);
+
+int main() {
+
+  std::cout << FizzBuzz(3) << std::endl;
+  std::cout << FizzBuzz(5) << std::endl;
+  std::cout << FizzBuzz(7) << std::endl;
+  std::cout << FizzBuzz(15) << std::endl;
+
+}
+
